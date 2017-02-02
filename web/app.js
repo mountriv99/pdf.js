@@ -1356,7 +1356,8 @@ if (typeof PDFJSDev === 'undefined' || PDFJSDev.test('GENERIC')) {
       // start accepting URLs from foreign origin -- CORS headers on the remote
       // server must be properly configured.
       if (fileOrigin !== viewerOrigin) {
-        throw new Error('file origin does not match viewer\'s');
+        // setting CORS on S3 doesn't work, so commenting this out
+        // throw new Error('file origin does not match viewer\'s');
       }
     } catch (e) {
       var message = e && e.message;
